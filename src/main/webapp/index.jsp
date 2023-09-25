@@ -1,5 +1,8 @@
 <html>
 <body>
-<h2>Hola mundo </h2>
+
+<% String redirectURL = "EmpleadoServlet?action=listar"; 	
+response.sendRedirect(redirectURL);
+%>
 </body>
 </html>

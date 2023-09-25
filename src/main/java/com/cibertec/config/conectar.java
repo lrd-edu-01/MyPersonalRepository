@@ -3,7 +3,7 @@ package com.cibertec.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class conectar {
+public class Conectar {
 	private static  String driver  = "com.mysql.jdbc.Driver";
 	private static String database  = "minimarket";
 	private static String host = "localhost";
