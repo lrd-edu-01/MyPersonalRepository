@@ -32,8 +32,8 @@ public class EmpleadoDaoImpl  implements EmpleadoDao{
 			ps.setString(1, empleado.getApellido());
 			ps.setString(2, empleado.getNombre());
 			ps.setInt(3, empleado.getEdad());
-			ps.setDouble(4, empleado.getSalario());;
-			ps.setString(5, empleado.getSexo());
+			ps.setString(4, empleado.getSexo());
+			ps.setDouble(5, empleado.getSalario());
 			valor = ps.executeUpdate();
 			
 		} catch (Exception e) {

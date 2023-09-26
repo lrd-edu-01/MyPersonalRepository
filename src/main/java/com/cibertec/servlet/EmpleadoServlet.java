@@ -37,28 +37,28 @@ public class EmpleadoServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		switch (action) {
 		case Constant.REGISTRAR:
-			
-			String nombre = request.getParameter("txtNombre");
+					
 			String apellidos = request.getParameter("txtApellidos");
-			String direccion = request.getParameter("txtDireccion");
-			String telefono = request.getParameter("txtTelefono");
-			String email = request.getParameter("txtEmail");
+			String nombres = request.getParameter("txtNombre");
+			String edad = request.getParameter("txtEdad");
+			String Sexo = request.getParameter("txtSexo");
+			String salario = request.getParameter("txtSalario");
 			
-			Cliente cliente = new Cliente();
+			Empleado empleado = new Empleado();
 			
-			cliente.setNomCliente(nombre);
-			cliente.setApCliente(apellidos);		
-			cliente.setDireccion(direccion);
-			cliente.setTelefono(telefono);
-			cliente.setEmail(email);
+			empleado.setApellido(apellidos);
+			empleado.setNombre(nombres);
+			empleado.setEdad(Integer.parseInt(edad));
+			empleado.setSexo(Sexo);
+			empleado.setSalario(Double.parseDouble(salario));
 			
-			int valor = service.guardaCliente(cliente);
+			int valor = service.InsertaEmpleado(empleado);
 			if(valor == 1) {
 				ListadoEmpleados(request, response);
 				request.setAttribute("Mensaje de confirmacion", "Empleado registrado correctamente");
 			} else {
 				request.setAttribute("mensajeError", "Ocurrió un problema al registrar");
-				request.getRequestDispatcher("ListadoEmpleado.jsp").forward(request, response);
+				request.getRequestDispatcher("ListadoEmpleados.jsp").forward(request, response);
 			}
 			break;
 					
@@ -70,7 +70,7 @@ public class EmpleadoServlet extends HttpServlet {
 	private void ListadoEmpleados(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		List<Empleado>  lista = service.ListarEmpleado();
 		request.setAttribute("data", lista);
-		request.getRequestDispatcher("ListadoEmpleado.jsp").forward(request, response);
+		request.getRequestDispatcher("ListadoEmpleados.jsp").forward(request, response);
 	}
 
 	/**

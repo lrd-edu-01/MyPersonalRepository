@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Crud Empleados</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
 <h3>Listado de Empleados </h3>
@@ -34,9 +35,9 @@
 			    <td><%= item.getId()%></td>
 			    <td><%= item.getApellido()%></td>
 			    <td><%= item.getNombre()%></td>
-			    <td><%= item.getEdad()%></td>
-			    <td><%= item.getSexo()%></td>
-			    <td><%= item.getSalario() %></td>			
+			    <td><%= item.getEdad()%></td>	
+			    <td><%= item.getSexo()%></td>	
+			    <td><%= item.getSalario() %></td>	
 				<td colspan="2">						
 					<a class="btn btn-secondary btn-sm" title="Actualizar" href="#">Actualizar</a>
 		            <a class="btn btn-secondary btn-sm" title="Eliminar" href="#">Eliminar</a>		            
